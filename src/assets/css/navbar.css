@@ -1,0 +1,33 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.nav-right {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-item-link {
+  transition: border 0.4s ease-out;
+  padding: 10px;
+  max-width: fit-content;
+  border-bottom: 1px solid transparent;
+}
+
+.logo:hover,
+.nav-item-link:hover {
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+
+.logo {
+  border-bottom: 1px solid transparent;
+  padding: 20px;
+}

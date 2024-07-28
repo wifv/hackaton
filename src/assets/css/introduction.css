@@ -1,0 +1,38 @@
+.introduction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.introduction-content {
+  display: flex;
+  /* gap: 30px; */
+  /* flex-wrap: wrap; */
+  /* flex-direction: column-reverse; */
+  max-width: 800px;
+  width: 100%;
+  align-items: center;
+}
+
+.introduction-content-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.introduction-header {
+  color: white;
+  font-size: 40px;
+  font-weight: 400;
+  /* text-align: start; */
+}
+
+@media (max-width: 790px) {
+  .introduction-content {
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+  }
+}

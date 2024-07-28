@@ -1,22 +1,22 @@
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-
-import image from '../images/image1.png'
-import { Link } from 'react-router-dom';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { Link } from 'react-router-dom';
+import image from '../images/image1.png'
+import image3 from '../images/image3.png'
+import 'swiper/css/effect-coverflow';
+import 'swiper/css';
 
 const Offers = () => {
   const models = [
-    '/model/scene.gltf',
-    '/model/scene.gltf'
+    '/scene.gltf',
+    '/scene.gltf'
   ];
-
+  
+  models.map((element: any) => {
+    console.log(element)
+  })
   return (
-    <section style={{background: `url(${image})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '1080px'}}>
+    <section className='models-section' style={{background: `url(${image3})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '1080px'}}>
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -35,9 +35,22 @@ const Offers = () => {
       >
         {
           models.map((model, id) => (
-          <SwiperSlide>
+          <SwiperSlide key={id}>
             <Link to={`/models/${id}`}>
-              <img src={image} alt="model" />
+              {/* <section className='model-container'>
+                <div className="model-text-container">
+                  <div className="model-text-left model-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt dolor iste incidunt et consequatur maiores, provident nisi quasi consectetur aspernatur sequi! Consequatur, consectetur officiis. Inventore excepturi esse voluptate minus expedita?
+                  </div>
+                  <div className="model-text-mid model-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum facere architecto dolor libero, magnam dolorum asperiores voluptatibus, impedit, in maxime tenetur. Optio ipsum temporibus omnis consequatur culpa fuga officiis consequuntur.
+                  </div>
+                  <div className="model-text model-name">
+                    Model Name
+                  </div>
+                </div>
+              </section> */}
+                <img src={image} alt="aaaaaaa" style={{maxHeight: "400px", width: '400px'}}/>
             </Link>
           </SwiperSlide>
           ))

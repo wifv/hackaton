@@ -4,7 +4,7 @@ import ThreeModel from './ThreeModel'
 
 const Introduction = () => {
   const model = [
-    '/model/scene.gltf'
+    '/scene.gltf'
   ]
   return (
     <div className='introduction' style={{background: `url(${image1})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '1080px'}}>

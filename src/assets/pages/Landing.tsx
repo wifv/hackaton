@@ -6,16 +6,18 @@ import '../css/landing.css'
 import Introduction from './Introduction';
 import Offers from './Offers';
 import image from '../images/image1.png'
+import NewModel from './NewModel';
 
 const Landing = () => {
   
   const models = [
-    '/model/scene.gltf',
-    '/model/scene.gltf'
+    '/scene.gltf',
+    '/scene.gltf'
   ];
   return (
     <main className='main-container'>
       <Introduction />
+      {/*
       <div className="models-container">
         <h1>OUR MODELS</h1>
         <Swiper
@@ -55,9 +57,8 @@ const Landing = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+        </div> */}
       <Offers />
-      
     </main>
   )
 }

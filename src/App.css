@@ -28,3 +28,20 @@ body {
 .model {
   cursor: grab;
 }
+
+.newModel,
+.newModel * {
+  max-width: 500px !important;
+  width: 100%;
+  min-height: 500px;
+  height: 100% !important;
+}
+
+.model-container {
+  margin-top: 100px;
+}
+
+.model-detail {
+  height: 100vh;
+  background-color: rgb(255, 247, 220);
+}

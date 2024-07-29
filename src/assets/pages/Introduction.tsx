@@ -1,6 +1,5 @@
 import image1 from '../images/image1.png'
 import '../css/introduction.css'
-import ThreeModel from './ThreeModel'
 
 const Introduction = () => {
   return (

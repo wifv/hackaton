@@ -1,19 +1,40 @@
-import React from 'react'
+import { useLocation } from 'react-router-dom';
 import NewModel from './NewModel'
 
+const info = [
+  {
+    name: 'Mahsi (high boots) – gold embroidered.',
+    information: 'It probably belonged to the Emir of Bukhara. End of XIX century.',
+    secondary: 'Currently available for viewing at the exhibition of the Samarkand State Integrated Historical-Architectural and Art Museum-Reserve.'
+  },
+  {
+    name: 'Kaushi (boots) – gold embroidered.',
+    information: 'It probably belonged to the Emir of Bukhara. Year 1895.',
+    secondary: 'Currently available for viewing at the exhibition of the Samarkand State Integrated Historical-Architectural and Art Museum-Reserve.'
+  },
+  {
+    name: 'Mahsi (high boots) – gold embroidered.',
+    information: 'It probably belonged to the Emir of Bukhara. End of XIX century.',
+    secondary: 'Currently available for viewing at the exhibition of the Samarkand State Integrated Historical-Architectural and Art Museum-Reserve.'
+  }
+]
+
 const Model = () => {
+  const location = useLocation()
+  let u: any = location.pathname.slice(-1)
+  console.log(u)
   return (
     <div className="model-detail">
       <section className='model-container'>
         <div className="model-text-container">
           <div className="model-text-left model-text">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt dolor iste incidunt et consequatur maiores, provident nisi quasi consectetur aspernatur sequi! Consequatur, consectetur officiis. Inventore excepturi esse voluptate minus expedita?
+            {info[u].secondary}
           </div>
           <div className="model-text-mid model-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum facere architecto dolor libero, magnam dolorum asperiores voluptatibus, impedit, in maxime tenetur. Optio ipsum temporibus omnis consequatur culpa fuga officiis consequuntur.
+            {info[u].information}
           </div>
           <div className="model-text model-name">
-            Model Name
+            {info[u].name}
           </div>
         </div>
           <NewModel />
@@ -22,4 +43,4 @@ const Model = () => {
   )
 }
 
-export default Model
+export default Model;

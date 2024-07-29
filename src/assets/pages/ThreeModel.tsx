@@ -4,7 +4,6 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import * as THREE from 'three';
 
 const ThreeModel = ({model, givenStyle}: any) => {
-  console.log("givenStyle", givenStyle)
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -26,7 +25,6 @@ const ThreeModel = ({model, givenStyle}: any) => {
       antialias: true,
       alpha: true,
     });
-    // renderer.setSize(window.innerWidth <= 700 ? window.innerWidth - 20: window.innerWidth / 3,window.innerWidth <= 700 ? window.innerHeight - 20: window.innerHeight / 3);
     renderer.setSize(givenStyle ? (window.innerWidth / 2 - 20) : 400, givenStyle ? (window.innerHeight / 2 - 20) : 400)
     
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -64,9 +62,6 @@ const ThreeModel = ({model, givenStyle}: any) => {
       renderer.setSize(givenStyle ? (window.innerWidth / 2 - 20) : 400, givenStyle ? (window.innerHeight / 2 - 20) : 400)
       camera.aspect = canvas.clientWidth / canvas.clientHeight;
       camera.updateProjectionMatrix();
-      // renderer.setSize(window.innerWidth <= 700 ? window.innerWidth - 20: window.innerWidth / 3,window.innerWidth <= 700 ? window.innerHeight - 20: window.innerHeight / 3);
-      // renderer.setSize(window.innerWidth / 2 - 20, window.innerHeight / 2 - 20)
-      // console.log(canvas.clientWidth, canvas.clientHeight)
     };
 
     window.addEventListener('resize', handleResize);

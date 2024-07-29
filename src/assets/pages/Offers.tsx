@@ -1,63 +1,55 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
-import image from '../images/image1.png'
-import image3 from '../images/image3.png'
+import image2 from '../images/image2.png';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css';
+import 'swiper/css/pagination';
+import { models } from "../../Export";
+
+export const swiperImages = [
+  '/i0.png',
+  '/i1.png',
+  '/i2.png',
+];
 
 const Offers = () => {
-  const models = [
-    '/scene.gltf',
-    '/scene.gltf'
-  ];
-  
-  models.map((element: any) => {
-    console.log(element)
-  })
   return (
-    <section className='models-section' style={{background: `url(${image3})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '1080px'}}>
+    <section className='models-section' style={{
+      background: `url(${image2})`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      height: '1080px',
+    }}>
+      <h1>OUR MODELS</h1>
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={'auto'}
+        spaceBetween={200}
         coverflowEffect={{
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: false,
         }}
         pagination={true}
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {
-          models.map((model, id) => (
-          <SwiperSlide key={id}>
-            <Link to={`/models/${id}`}>
-              {/* <section className='model-container'>
-                <div className="model-text-container">
-                  <div className="model-text-left model-text">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt dolor iste incidunt et consequatur maiores, provident nisi quasi consectetur aspernatur sequi! Consequatur, consectetur officiis. Inventore excepturi esse voluptate minus expedita?
-                  </div>
-                  <div className="model-text-mid model-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum facere architecto dolor libero, magnam dolorum asperiores voluptatibus, impedit, in maxime tenetur. Optio ipsum temporibus omnis consequatur culpa fuga officiis consequuntur.
-                  </div>
-                  <div className="model-text model-name">
-                    Model Name
-                  </div>
-                </div>
-              </section> */}
-                <img src={image} alt="aaaaaaa" style={{maxHeight: "400px", width: '400px'}}/>
+        {models.map((model, index) => (
+          <SwiperSlide key={index}>
+            <Link to={`/models/${index}`}>
+              <img src={swiperImages[index % swiperImages.length]} alt="image" className={model ? '' : 'error'}/>
             </Link>
           </SwiperSlide>
-          ))
-        }
+        ))}
       </Swiper>
     </section>
-  )
-}
+  );
+};
 
-export default Offers
+export default Offers;

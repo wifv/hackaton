@@ -14,6 +14,8 @@
   max-width: 800px;
   width: 100%;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .introduction-content-left {
@@ -24,15 +26,7 @@
 }
 
 .introduction-header {
-  color: white;
   font-size: 40px;
   font-weight: 400;
   /* text-align: start; */
-}
-
-@media (max-width: 790px) {
-  .introduction-content {
-    justify-content: center;
-    flex-wrap: wrap-reverse;
-  }
 }

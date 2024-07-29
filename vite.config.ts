@@ -12,4 +12,10 @@ export default defineConfig({
   define: {
     'process.env': {},
   },
+  build: {
+    outDir: 'dist'
+  },
+  server: {
+    historyApiFallback: true
+  }
 });
